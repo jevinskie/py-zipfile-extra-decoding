@@ -1,0 +1,67 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=69.5", "setuptools-scm>=8.0"]
+
+[project]
+authors = [
+  {name = "Jevin Sweval", email = "jevinsweval@gmail.com"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11"
+]
+dependencies = [
+  "attrs>=23.2.0",
+  "packaging>=24.0",
+  "path>=16.14.0",
+  "rich>=13.7.1",
+  "whenever>=0.5.2",
+  "wrapt>=1.16.0"
+]
+description = "Extension of Python's zipfile ZipInfo class to support decoding extra fields like Extended Timestamp"
+dynamic = [
+  "version"
+]
+keywords = [
+  "zipfile",
+  "ZipInfo",
+  "extra field",
+  "extra info",
+  "extended info"
+]
+license = {text = "BSD-2-Clause"}
+name = "py-zipfile-extra-info"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.10.0",
+  "pyright>=1.1.362",
+  "pytest>=8.2.0",
+  "pytest-clarity>=1.0.1",
+  "pytest-cov>=5.0.0",
+  "pytest-randomly>=3.15.0",
+  "pytest-sugar>=1.0.0"
+]
+
+[project.scripts]
+zipfile-extra-info = "zipfile_extra_info.tools.dump_extra_info:main"
+
+[project.urls]
+repository = "https://github.com/jevinskie/py-zipfile-extra-info"
+
+[pytest]
+testpaths = "test"
+
+[tool.mypy]
+strict = true
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.dynamic]
+version = {attr = "zipfile_extra_info._version.__version__"}
+
+[tool.setuptools_scm]
+version_file = "zipfile_extra_info/_version.py"

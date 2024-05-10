@@ -1,0 +1,18 @@
+# JetBrains
+**/.idea/
+
+# macOS
+**/.DS_Store
+
+# VS Code
+**/.vscode/
+**/.vscode-ctags
+
+# Python
+**/.mypy_cache/
+**/.ruff_cache/
+**/__pycache__/
+**/*.egg-info/
+**/*.pyc
+**/_version.py
+/dist/
