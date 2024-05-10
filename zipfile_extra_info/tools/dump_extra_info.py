@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from packaging.version import Version
+from rich import print
 from rich.console import Console
 from rich.logging import RichHandler
 
@@ -36,7 +37,6 @@ def get_arg_parser() -> argparse.ArgumentParser:
 
 
 def real_main(args: argparse.Namespace) -> int:
-    print(args)
     with ZipFile(args.zip_file) as f:
         for i in f.infolist():
             print(i)
