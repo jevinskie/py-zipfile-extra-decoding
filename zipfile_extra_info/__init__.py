@@ -1,6 +1,3 @@
-# import zipfile as _zipfile
-
-
 from zipfile import (
     ZIP_BZIP2,
     ZIP_DEFLATED,
